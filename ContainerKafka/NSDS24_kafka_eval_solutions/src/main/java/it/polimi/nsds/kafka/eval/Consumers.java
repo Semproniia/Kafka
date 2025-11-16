@@ -60,6 +60,8 @@ public class Consumers {
             this.consumerGroupId = consumerGroupId;
         }
 
+        // prova simone 
+
         public void execute() {
             // Consumer
             final Properties consumerProps = new Properties();
