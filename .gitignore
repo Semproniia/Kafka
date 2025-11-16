@@ -1,0 +1,25 @@
+# ==== Java / Maven ====
+# Maven build directories
+target/
+**/target/
+
+# Compiled Java classes
+*.class
+
+# ==== IDE ====
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code
+.vscode/
+
+# ==== OS junk ====
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
