@@ -27,18 +27,23 @@ import java.util.*;
 // Please, specify below any relation between the number of partitions for the topics
 // and the number of instances of each Consumer
 
+
+
 public class Consumers {
     public static void main(String[] args) {
         String serverAddr = "localhost:9092";
-        int consumerId = Integer.valueOf(args[0]);
-        String groupId = args[1];
-        if (consumerId == 1) {
-            Consumer1 consumer = new Consumer1(serverAddr, groupId);
-            consumer.execute();
-        } else if (consumerId == 2) {
+
+        String groupId = "consumer-group-2";
+
+        //int consumerId = Integer.valueOf(args[0]);
+        //String groupId = args[1];
+        //if (consumerId == 1) {
+        //    Consumer1 consumer = new Consumer1(serverAddr, groupId);
+        //    consumer.execute();
+        //} else if (consumerId == 2) {
             Consumer2 consumer = new Consumer2(serverAddr, groupId);
             consumer.execute();
-        }
+        //}
     }
 
     private static class Consumer1 {
