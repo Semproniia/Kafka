@@ -9,7 +9,8 @@ public class AtMostOncePrinter {
     private static final int threshold = 500;
 
     public static void main(String[] args) {
-        String groupId = args[0];
+        //String groupId = args[0];
+        String groupId = "atMostOncePrinterGroup";
 
         final Properties props = new Properties();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, serverAddr);

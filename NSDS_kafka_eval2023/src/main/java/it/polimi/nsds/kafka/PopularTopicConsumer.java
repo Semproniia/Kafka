@@ -8,7 +8,8 @@ public class PopularTopicConsumer {
     private static final String serverAddr = "localhost:9092";
 
     public static void main(String[] args) {
-        String groupId = args[0];
+        //String groupId = args[0];
+        String groupId = "popularTopicConsumerGroup";
 
         final Properties props = new Properties();
         props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, serverAddr);
