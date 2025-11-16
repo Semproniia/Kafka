@@ -11,13 +11,16 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 public class Producer {
-    private static final String defaultTopic = "inputTopic";
+    private static final String defaultTopic1 = "inputTopic1";
+    private static final String defaultTopic2 = "inputTopic2";
+    private static final String defaultTopic3 = "inputTopic3";
     private static final int numMessages = 100000;
     private static final int waitBetweenMsgs = 500;
     private static final String serverAddr = "localhost:9092";
 
     public static void main(String[] args) {
-        List<String> topics = Collections.singletonList(defaultTopic);
+        List<String> topics = Collections.emptyList();
+        topics = Arrays.asList(defaultTopic1, defaultTopic2, defaultTopic3);
 
         final Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, serverAddr);
@@ -35,7 +38,7 @@ public class Producer {
 
             final ProducerRecord<String, Integer> record = new ProducerRecord<>(topic, key, value);
             final Future<RecordMetadata> future = producer.send(record);
-            System.out.println("Sent: <" + key + ", " + value + ">");
+            System.out.println("Sent: <" + key + ", " + value + ", " +  topic + ">");
 
             try {
                 Thread.sleep(waitBetweenMsgs);
