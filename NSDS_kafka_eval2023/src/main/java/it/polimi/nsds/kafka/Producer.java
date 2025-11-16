@@ -15,7 +15,7 @@ public class Producer {
     private static final String defaultTopic2 = "inputTopic2";
     private static final String defaultTopic3 = "inputTopic3";
     private static final int numMessages = 100000;
-    private static final int waitBetweenMsgs = 500;
+    private static final int waitBetweenMsgs = 2000;
     private static final String serverAddr = "localhost:9092";
 
     public static void main(String[] args) {
