@@ -21,7 +21,7 @@ import java.util.*;
 // Number of partitions for outputTopic1 (min, max):
 // Number of partitions for outputTopic2 (min, max):
 
-// modifica simone
+// modifica simone prima di stash
 
 // Number of instances of Consumer1 (and groupId of each instance) (min, max):
 // Number of instances of Consumer2 (and groupId of each instance) (min, max):
