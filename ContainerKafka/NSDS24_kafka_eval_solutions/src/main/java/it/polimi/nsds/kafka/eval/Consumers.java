@@ -48,11 +48,11 @@ public class Consumers {
         //int consumerId = Integer.valueOf(args[0]);
         //String groupId = args[1];
         //if (consumerId == 1) {
-        //    Consumer1 consumer = new Consumer1(serverAddr, groupId);
-        //    consumer.execute();
-        //} else if (consumerId == 2) {
-            Consumer2 consumer = new Consumer2(serverAddr, groupId);
+            Consumer1 consumer = new Consumer1(serverAddr, groupId);
             consumer.execute();
+        //} else if (consumerId == 2) {
+        //    Consumer2 consumer = new Consumer2(serverAddr, groupId);
+        //    consumer.execute();
         //}
     }
 
@@ -60,7 +60,7 @@ public class Consumers {
         private final String serverAddr;
         private final String consumerGroupId;
 
-        private static final String transactionId = "consumer1Id";
+        private static final String transactionId = "consumer2Id";
 
         private static final String inputTopic = "inputTopic";
         private static final String outputTopic = "outputTopic1";
@@ -103,7 +103,7 @@ public class Consumers {
                 for (final ConsumerRecord<String, Integer> record : records) {
                     final String key = record.key();
                     final Integer value = record.value();
-                    System.out.println("Received key: " + key + " value: " + value);
+                    System.out.println("Received key: " + key + " value: " + value + " FROM PARTITION " + record.partition());
                     window.add(record);
                     if (window.size() == 10) {
                         System.out.println("Window full");

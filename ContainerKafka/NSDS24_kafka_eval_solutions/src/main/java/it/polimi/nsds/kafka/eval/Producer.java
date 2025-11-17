@@ -12,7 +12,7 @@ public class Producer {
     private static final String topic = "inputTopic";
 
     private static final int numMessages = 100000;
-    private static final int waitBetweenMsgs = 500;
+    private static final int waitBetweenMsgs = 3000;
 
     private static final String serverAddr = "localhost:9092";
 
